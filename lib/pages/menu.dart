@@ -12,8 +12,103 @@ class _MenuScreenPageState extends State<MenuScreenPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Color(0xF152e51), title: const Text('BE SAFE')),
+          actions: [
+            IconButton(
+              icon: const Icon(
+                Icons.search,
+                color: Colors.white,
+              ),
+              onPressed: () {},
+            ),
+          ],
+          backgroundColor: Color(0xF152e51),
+          centerTitle: true,
+          title: const Text('BE SAFE')),
       backgroundColor: const Color(0xFF0F284C),
+      drawer: Drawer(
+        backgroundColor: Color(0xFF0F284C),
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              child: Column(
+                children: [
+                  Image.asset(
+                    '../lib/images/hacker.png',
+                    fit: BoxFit.cover,
+                  ),
+                  const Text(
+                    'Seja bem-vindo',
+                    style: TextStyle(
+                      fontFamily: 'orbitron',
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+              decoration: const BoxDecoration(
+                color: Color(0xFF0F284C),
+              ),
+            ),
+            ListTile(
+              title: const Text(
+                'Home',
+                style: TextStyle(
+                  fontFamily: 'orbitron',
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text(
+                'Conteúdo',
+                style: TextStyle(
+                  fontFamily: 'orbitron',
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              onTap: () {},
+            ),
+            ListTile(
+              title: const Text(
+                'Sobre',
+                style: TextStyle(
+                  fontFamily: 'orbitron',
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text(
+                'Sair',
+                style: TextStyle(
+                  fontFamily: 'orbitron',
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
       body: Container(
         alignment: Alignment.center,
         padding: const EdgeInsets.all(32),
@@ -182,9 +277,7 @@ class _MenuScreenPageState extends State<MenuScreenPage> {
                 children: <Widget>[
                   Row(children: [
                     GestureDetector(
-                      onTap: () {
-                        // Ação a ser realizada quando o container for clicado
-                      },
+                      onTap: () {},
                       child: Container(
                         decoration: BoxDecoration(
                           color: Colors.blue, // Cor de preenchimento
