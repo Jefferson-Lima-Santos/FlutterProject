@@ -1,5 +1,6 @@
 import 'package:cybersecurity/pages/introdcciber.dart';
 import 'package:cybersecurity/pages/login.dart';
+import 'package:cybersecurity/pages/questionario.dart';
 import 'package:cybersecurity/pages/sobre.dart';
 import 'package:flutter/material.dart';
 
@@ -356,6 +357,11 @@ class _MenuScreenPageState extends State<MenuScreenPage> {
                 GestureDetector(
                   onTap: () {
                     // Ação a ser realizada quando o container for clicado
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const QuestionarioPageScreen()),
+                    );
                   },
                   child: Container(
                     decoration: BoxDecoration(

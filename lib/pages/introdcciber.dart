@@ -146,7 +146,15 @@ class _IntrodcciberScreenPageState extends State<IntrodcciberScreenPage> {
             ),
             const Text(
               '   A Segurança Cibernética é um esforço contínuo para proteger indivíduos, organizações e governos de ataques digitais por proteger.',
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.right,
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.white,
+              ),
+            ),
+            const Text(
+              'Segurança Cibernética é então o conjunto de medidas para garantir a segurança de informações em ambientes digitais.',
+              textAlign: TextAlign.left,
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -155,10 +163,9 @@ class _IntrodcciberScreenPageState extends State<IntrodcciberScreenPage> {
             ),
             const Text(
               '      O Brasil foi o segundo país mais atingido da América Latina, com 103,16 bilhões de tentativas de ataques cibernéticos no ano de 2022, um aumento de 16% com relação a 2021.',
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.right,
               style: TextStyle(
                 fontSize: 18,
-                fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
             ),
