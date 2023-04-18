@@ -1,3 +1,6 @@
+import 'package:cybersecurity/pages/introdcciber.dart';
+import 'package:cybersecurity/pages/login.dart';
+import 'package:cybersecurity/pages/sobre.dart';
 import 'package:flutter/material.dart';
 
 class MenuScreenPage extends StatefulWidget {
@@ -33,12 +36,8 @@ class _MenuScreenPageState extends State<MenuScreenPage> {
             DrawerHeader(
               child: Column(
                 children: [
-                  Image.asset(
-                    '../lib/images/hacker.png',
-                    fit: BoxFit.cover,
-                  ),
                   const Text(
-                    'Seja bem-vindo',
+                    'MENU',
                     style: TextStyle(
                       fontFamily: 'orbitron',
                       fontSize: 14,
@@ -54,32 +53,6 @@ class _MenuScreenPageState extends State<MenuScreenPage> {
             ),
             ListTile(
               title: const Text(
-                'Home',
-                style: TextStyle(
-                  fontFamily: 'orbitron',
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text(
-                'Conteúdo',
-                style: TextStyle(
-                  fontFamily: 'orbitron',
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-              onTap: () {},
-            ),
-            ListTile(
-              title: const Text(
                 'Sobre',
                 style: TextStyle(
                   fontFamily: 'orbitron',
@@ -89,8 +62,24 @@ class _MenuScreenPageState extends State<MenuScreenPage> {
                 ),
               ),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SobrePageScreen()),
+                );
               },
+            ),
+            ListTile(
+              title: const Text(
+                'Mande um Feedback',
+                style: TextStyle(
+                  fontFamily: 'orbitron',
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              onTap: () {},
             ),
             ListTile(
               title: const Text(
@@ -103,7 +92,11 @@ class _MenuScreenPageState extends State<MenuScreenPage> {
                 ),
               ),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const LoginScreenPage()),
+                );
               },
             ),
           ],
@@ -272,120 +265,123 @@ class _MenuScreenPageState extends State<MenuScreenPage> {
                 color: Colors.white,
               ),
             ),
-            Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Row(children: [
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.blue, // Cor de preenchimento
-                          borderRadius:
-                              BorderRadius.circular(10), // Borda arredondada
-                          border: Border.all(
-                              color: Colors.black,
-                              width: 2), // Borda preta com largura de 2
-                        ),
-                        width: 200, // Largura do container
-                        height: 100, // Altura do container
-                        child: Center(
-                          child: Text(
-                            ' 1. Introdução  à cibersegurança ',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white, // Cor do texto
-                              fontSize: 18, // Tamanho da fonte do texto
-                            ),
-                          ),
+            Column(mainAxisAlignment: MainAxisAlignment.center, children: <
+                Widget>[
+              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const IntrodcciberScreenPage()),
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.blue, // Cor de preenchimento
+                      borderRadius:
+                          BorderRadius.circular(10), // Borda arredondada
+                      border: Border.all(
+                          color: Colors.black,
+                          width: 2), // Borda preta com largura de 2
+                    ),
+                    width: 200, // Largura do container
+                    height: 100, // Altura do container
+                    child: Center(
+                      child: Text(
+                        ' 1. Introdução  à cibersegurança ',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white, // Cor do texto
+                          fontSize: 18, // Tamanho da fonte do texto
                         ),
                       ),
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        // Ação a ser realizada quando o container for clicado
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.blue, // Cor de preenchimento
-                          borderRadius:
-                              BorderRadius.circular(10), // Borda arredondada
-                          border: Border.all(
-                              color: Colors.black,
-                              width: 2), // Borda preta com largura de 2
-                        ),
-                        width: 200, // Largura do container
-                        height: 100, // Altura do container
-                        child: Center(
-                          child: Text(
-                            '2. Protegendo os seus dados pessoais',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white, // Cor do texto
-                              fontSize: 18, // Tamanho da fonte do texto
-                            ),
-                          ),
-                        ),
-                      ),
-                    )
-                  ]),
-                  Row(children: [
-                    GestureDetector(
-                      onTap: () {
-                        // Ação a ser realizada quando o container for clicado
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.blue, // Cor de preenchimento
-                          borderRadius:
-                              BorderRadius.circular(10), // Borda arredondada
-                          border: Border.all(
-                              color: Colors.black,
-                              width: 2), // Borda preta com largura de 2
-                        ),
-                        width: 200, // Largura do container
-                        height: 100, // Altura do container
-                        child: Center(
-                          child: Text(
-                            ' 3. Gerenciamento de senhas ',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white, // Cor do texto
-                              fontSize: 18, // Tamanho da fonte do texto
-                            ),
-                          ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.blue, // Cor de preenchimento
+                      borderRadius:
+                          BorderRadius.circular(10), // Borda arredondada
+                      border: Border.all(
+                          color: Colors.black,
+                          width: 2), // Borda preta com largura de 2
+                    ),
+                    width: 200, // Largura do container
+                    height: 100, // Altura do container
+                    child: Center(
+                      child: Text(
+                        '2. Protegendo os seus dados pessoais',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white, // Cor do texto
+                          fontSize: 18, // Tamanho da fonte do texto
                         ),
                       ),
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        // Ação a ser realizada quando o container for clicado
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.blue, // Cor de preenchimento
-                          borderRadius:
-                              BorderRadius.circular(10), // Borda arredondada
-                          border: Border.all(
-                              color: Colors.black,
-                              width: 2), // Borda preta com largura de 2
-                        ),
-                        width: 200, // Largura do container
-                        height: 100, // Altura do container
-                        child: Center(
-                          child: Text(
-                            ' 4. Fixando   conceitos',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white, // Cor do texto
-                              fontSize: 18, // Tamanho da fonte do texto
-                            ),
-                          ),
+                  ),
+                )
+              ]),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+                GestureDetector(
+                  onTap: () {
+                    // Ação a ser realizada quando o container for clicado
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.blue, // Cor de preenchimento
+                      borderRadius:
+                          BorderRadius.circular(10), // Borda arredondada
+                      border: Border.all(
+                          color: Colors.black,
+                          width: 2), // Borda preta com largura de 2
+                    ),
+                    width: 200, // Largura do container
+                    height: 100, // Altura do container
+                    child: Center(
+                      child: Text(
+                        ' 3. Gerenciamento de senhas ',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white, // Cor do texto
+                          fontSize: 18, // Tamanho da fonte do texto
                         ),
                       ),
-                    )
-                  ]),
-                ]),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    // Ação a ser realizada quando o container for clicado
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.blue, // Cor de preenchimento
+                      borderRadius:
+                          BorderRadius.circular(10), // Borda arredondada
+                      border: Border.all(
+                          color: Colors.black,
+                          width: 2), // Borda preta com largura de 2
+                    ),
+                    width: 200, // Largura do container
+                    height: 100, // Altura do container
+                    child: Center(
+                      child: Text(
+                        ' 4. Fixando   conceitos',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white, // Cor do texto
+                          fontSize: 18, // Tamanho da fonte do texto
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+              ]),
+            ]),
           ],
         ),
       ),

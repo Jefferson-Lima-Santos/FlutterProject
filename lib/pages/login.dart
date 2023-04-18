@@ -1,4 +1,5 @@
 import 'package:cybersecurity/pages/cadastro.dart';
+import 'package:cybersecurity/pages/esqueceuasenha.dart';
 import 'package:cybersecurity/pages/menu.dart';
 import 'package:flutter/material.dart';
 
@@ -99,7 +100,7 @@ class LoginScreenPageState extends State<LoginScreenPage> {
             ElevatedButton(
               onPressed: () {
                 // ação a ser executada quando o botão for pressionado
-                Navigator.pushReplacement(
+                Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: (context) => const MenuScreenPage()),
@@ -116,11 +117,20 @@ class LoginScreenPageState extends State<LoginScreenPage> {
                     fontWeight: FontWeight.bold,
                   )),
             ),
-            const Text(
-              'Esqueceu sua senha?',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
+            GestureDetector(
+              onTap: () {
+                // ação a ser tomada quando o texto for clicado
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const EsqueceuasenhaPageScreen()),
+                );
+              },
+              child: const Text(
+                'Esqueceu a sua senha?',
+                style: TextStyle(
+                  color: Colors.blue,
+                ),
               ),
             ),
             const Text(
@@ -133,7 +143,7 @@ class LoginScreenPageState extends State<LoginScreenPage> {
             GestureDetector(
               onTap: () {
                 // ação a ser tomada quando o texto for clicado
-                Navigator.pushReplacement(
+                Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: (context) => const CadastroScreenPage()),
