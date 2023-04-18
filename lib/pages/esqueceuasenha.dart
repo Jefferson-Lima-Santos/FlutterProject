@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cybersecurity/pages/login.dart';
 
 class EsqueceuasenhaPageScreen extends StatefulWidget {
   const EsqueceuasenhaPageScreen({Key? key}) : super(key: key);
@@ -65,6 +66,11 @@ class _EsqueceuasenhaPageScreenState extends State<EsqueceuasenhaPageScreen> {
             ),
             ElevatedButton(
               onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const LoginScreenPage()),
+                );
                 // ação a ser executada quando o botão for pressionado
               },
               style: ElevatedButton.styleFrom(

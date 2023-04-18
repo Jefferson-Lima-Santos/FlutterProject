@@ -3,6 +3,7 @@ import 'package:cybersecurity/pages/login.dart';
 import 'package:cybersecurity/pages/questionario.dart';
 import 'package:cybersecurity/pages/sobre.dart';
 import 'package:flutter/material.dart';
+import 'package:cybersecurity/pages/feedback.dart';
 
 class MenuScreenPage extends StatefulWidget {
   const MenuScreenPage({Key? key}) : super(key: key);
@@ -41,7 +42,7 @@ class _MenuScreenPageState extends State<MenuScreenPage> {
                     'MENU',
                     style: TextStyle(
                       fontFamily: 'orbitron',
-                      fontSize: 14,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
@@ -80,7 +81,13 @@ class _MenuScreenPageState extends State<MenuScreenPage> {
                   color: Colors.white,
                 ),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const FeedPageScreen()),
+                );
+              },
             ),
             ListTile(
               title: const Text(
@@ -117,7 +124,7 @@ class _MenuScreenPageState extends State<MenuScreenPage> {
               'Seja bem-vindo',
               style: TextStyle(
                 fontFamily: 'orbitron',
-                fontSize: 14,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
@@ -258,10 +265,10 @@ class _MenuScreenPageState extends State<MenuScreenPage> {
               ],
             ),
             Text(
-              'Por favor, selecione o módulo de estudo.',
+              'Por favor, selecione o módulo de estudo:',
               style: TextStyle(
                 fontFamily: 'orbitron',
-                fontSize: 14,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
@@ -376,7 +383,7 @@ class _MenuScreenPageState extends State<MenuScreenPage> {
                     height: 100, // Altura do container
                     child: Center(
                       child: Text(
-                        ' 4. Fixando   conceitos',
+                        ' 4. Fixando conceitos',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white, // Cor do texto

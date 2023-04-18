@@ -1,6 +1,7 @@
 import 'package:cybersecurity/pages/menu.dart';
 import 'package:cybersecurity/pages/sobre.dart';
 import 'package:flutter/material.dart';
+import 'package:cybersecurity/pages/feedback.dart';
 
 class IntrodcciberScreenPage extends StatefulWidget {
   const IntrodcciberScreenPage({Key? key}) : super(key: key);
@@ -39,7 +40,7 @@ class _IntrodcciberScreenPageState extends State<IntrodcciberScreenPage> {
                     'MENU',
                     style: TextStyle(
                       fontFamily: 'orbitron',
-                      fontSize: 14,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
@@ -78,7 +79,13 @@ class _IntrodcciberScreenPageState extends State<IntrodcciberScreenPage> {
                   color: Colors.white,
                 ),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const FeedPageScreen()),
+                );
+              },
             ),
             ListTile(
               title: const Text(
@@ -108,11 +115,12 @@ class _IntrodcciberScreenPageState extends State<IntrodcciberScreenPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Text(
-              '1. Introdução à  Cibersegurança',
+              '1. Introdução  à  Cibersegurança',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontFamily: 'orbitron',
-                fontSize: 24,
+                fontSize: 32,
+                decoration: TextDecoration.underline,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
@@ -135,7 +143,7 @@ class _IntrodcciberScreenPageState extends State<IntrodcciberScreenPage> {
                             fontFamily: 'orbitron',
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                            color: Colors.yellow,
                           ),
                         ),
                       ),
@@ -146,7 +154,7 @@ class _IntrodcciberScreenPageState extends State<IntrodcciberScreenPage> {
             ),
             const Text(
               '   A Segurança Cibernética é um esforço contínuo para proteger indivíduos, organizações e governos de ataques digitais por proteger.',
-              textAlign: TextAlign.right,
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
                 color: Colors.white,
@@ -154,16 +162,15 @@ class _IntrodcciberScreenPageState extends State<IntrodcciberScreenPage> {
             ),
             const Text(
               'Segurança Cibernética é então o conjunto de medidas para garantir a segurança de informações em ambientes digitais.',
-              textAlign: TextAlign.left,
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
-                fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
             ),
             const Text(
               '      O Brasil foi o segundo país mais atingido da América Latina, com 103,16 bilhões de tentativas de ataques cibernéticos no ano de 2022, um aumento de 16% com relação a 2021.',
-              textAlign: TextAlign.right,
+              textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
                 color: Colors.white,

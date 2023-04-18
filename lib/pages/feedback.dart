@@ -1,16 +1,16 @@
 import 'package:cybersecurity/pages/menu.dart';
 import 'package:flutter/material.dart';
-import 'package:cybersecurity/pages/feedback.dart';
+import 'package:cybersecurity/pages/sobre.dart';
 import 'package:cybersecurity/pages/introdcciber.dart';
 
-class SobrePageScreen extends StatefulWidget {
-  const SobrePageScreen({Key? key}) : super(key: key);
+class FeedPageScreen extends StatefulWidget {
+  const FeedPageScreen({Key? key}) : super(key: key);
 
   @override
-  _SobrePageScreenState createState() => _SobrePageScreenState();
+  _FeedPageScreenState createState() => _FeedPageScreenState();
 }
 
-class _SobrePageScreenState extends State<SobrePageScreen> {
+class _FeedPageScreenState extends State<FeedPageScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,10 +109,10 @@ class _SobrePageScreenState extends State<SobrePageScreen> {
         ),
       ),
       body: Container(
-        alignment: Alignment.center,
+        alignment: Alignment.centerLeft,
         padding: const EdgeInsets.all(32),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Expanded(
               child: Container(
@@ -120,11 +120,18 @@ class _SobrePageScreenState extends State<SobrePageScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      '../lib/images/botao-de-informacoes.png',
+                      '../lib/images/feedback.png',
                       fit: BoxFit.cover,
+                      height: 35,
+                      width: 35,
+                      color: Colors.white,
+                      alignment: Alignment.topLeft,
+                    ),
+                    const SizedBox(
+                      width: 10,
                     ),
                     const Text(
-                      'Sobre',
+                      'Mande um feedback',
                       textAlign: TextAlign.start,
                       style: TextStyle(
                         fontFamily: 'orbitron',
@@ -138,11 +145,11 @@ class _SobrePageScreenState extends State<SobrePageScreen> {
               ),
             ),
             const SizedBox(
-              height: 100,
+              height: 50,
             ),
             Text(
-              'Este aplicativo foi desenvolvido com o objetivo de abordar conceitos relevantes sobre o universo da cibersegurança, demonstrando a importância de se proteger contra ameaças virtuais.',
-              textAlign: TextAlign.center,
+              'Nome',
+              textAlign: TextAlign.left,
               style: TextStyle(
                 fontFamily: 'orbitron',
                 fontSize: 20,
@@ -150,75 +157,23 @@ class _SobrePageScreenState extends State<SobrePageScreen> {
                 color: Colors.white,
               ),
             ),
-            const SizedBox(
-              height: 60,
-            ),
             Text(
-              'Aplicativo Desenvolvido por:',
+              'BE SAFE',
+              textAlign: TextAlign.left,
               style: TextStyle(
                 fontFamily: 'orbitron',
-                fontSize: 14,
+                fontSize: 18,
                 decoration: TextDecoration.underline,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.yellow,
               ),
             ),
             const SizedBox(
-              height: 50,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(50.0),
-                      child: Image.asset(
-                        '../lib/images/jefferson.png',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(50.0),
-                      child: Image.asset(
-                        '../lib/images/lucas.png',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    const Text(
-                      'Jefferson Lima',
-                      style: TextStyle(
-                        fontFamily: 'orbitron',
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    const Text(
-                      'Lucas Murari',
-                      style: TextStyle(
-                        fontFamily: 'orbitron',
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 100,
+              height: 20,
             ),
             const Text(
-              'Aplicativo desenvolvido com o SDK Flutter, utilizando a linguagem Dart.',
-              textAlign: TextAlign.center,
+              'EMAIL para coontato:',
+              textAlign: TextAlign.left,
               style: TextStyle(
                 fontFamily: 'orbitron',
                 fontSize: 16,
@@ -226,8 +181,87 @@ class _SobrePageScreenState extends State<SobrePageScreen> {
                 color: Colors.white,
               ),
             ),
+            const Text(
+              'BeSafeRP@outlook.com',
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontFamily: 'orbitron',
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                decoration: TextDecoration.underline,
+                color: Colors.yellow,
+              ),
+            ),
+            const SizedBox(
+              height: 100,
+            ),
+            const Text(
+              'Mande um feedback para o nosso email.',
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontFamily: 'orbitron',
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
             const SizedBox(
               height: 50,
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              GestureDetector(
+                onTap: () {
+                  // Ação a ser realizada quando o container for clicado
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.blueGrey, // Cor de preenchimento
+                    borderRadius:
+                        BorderRadius.circular(10), // Borda arredondada
+                    border: Border.all(
+                        color: Colors.black,
+                        width: 2), // Borda preta com largura de 2
+                  ),
+                  width: 500, // Largura do container
+                  height: 300, // Altura do container
+                  child: Center(
+                    child: TextField(
+                      textAlign: TextAlign.start,
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(
+                          Icons.email,
+                          color: Colors.white,
+                        ),
+                        prefixIconColor: Colors.white,
+                        hintText: 'Digite Seu Email',
+                        fillColor: Colors.white,
+                        focusColor: Colors.white,
+                        hoverColor: Colors.white,
+                        hintStyle: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                        ),
+                        labelText: 'Email',
+                        border: UnderlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.white,
+                          ),
+                        ),
+                        labelStyle: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      style: TextStyle(
+                        color: Colors.white, // Cor do texto
+                        fontSize: 18, // Tamanho da fonte do texto
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ]),
+            const SizedBox(
+              height: 10,
             ),
           ],
         ),
