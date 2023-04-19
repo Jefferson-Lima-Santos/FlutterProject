@@ -215,28 +215,30 @@ class _FeedPageScreenState extends State<FeedPageScreen> {
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.blueGrey, // Cor de preenchimento
+                    color: Colors.red.withOpacity(0), // Cor de preenchimento
                     borderRadius:
-                        BorderRadius.circular(10), // Borda arredondada
+                        BorderRadius.circular(20), // Borda arredondada
                     border: Border.all(
                         color: Colors.black,
                         width: 2), // Borda preta com largura de 2
                   ),
                   width: MediaQuery.of(context).size.width -
                       64, // Largura do container
-                  height: 300, // Altura do container
+                  height: 250, // Altura do container
 
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
                       TextField(
                         textAlign: TextAlign.start,
                         decoration: InputDecoration(
+                          border: InputBorder.none,
                           prefixIcon: Icon(
                             Icons.email,
                             color: Colors.white,
                           ),
                           prefixIconColor: Colors.white,
-                          hintText: 'Digite Seu Email',
+                          hintText: 'Digite seu Email',
                           fillColor: Colors.white,
                           focusColor: Colors.white,
                           hoverColor: Colors.white,
@@ -245,11 +247,6 @@ class _FeedPageScreenState extends State<FeedPageScreen> {
                             fontSize: 18,
                           ),
                           labelText: 'Email',
-                          border: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.white,
-                            ),
-                          ),
                           labelStyle: TextStyle(
                             color: Colors.white,
                           ),
@@ -259,15 +256,20 @@ class _FeedPageScreenState extends State<FeedPageScreen> {
                           fontSize: 18, // Tamanho da fonte do texto
                         ),
                       ),
+                      SizedBox(
+                        height: 20,
+                      ),
                       TextField(
                         textAlign: TextAlign.start,
+                        keyboardType: TextInputType.multiline,
+                        maxLines: null,
                         decoration: InputDecoration(
                           prefixIcon: Icon(
                             Icons.email,
                             color: Colors.white,
                           ),
                           prefixIconColor: Colors.white,
-                          hintText: 'Digite Seu Email',
+                          hintText: 'Digite sua mensagem',
                           fillColor: Colors.white,
                           focusColor: Colors.white,
                           hoverColor: Colors.white,
@@ -275,12 +277,8 @@ class _FeedPageScreenState extends State<FeedPageScreen> {
                             color: Colors.white,
                             fontSize: 18,
                           ),
-                          labelText: 'Email',
-                          border: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.white,
-                            ),
-                          ),
+                          labelText: 'Mensagem',
+                          border: InputBorder.none,
                           labelStyle: TextStyle(
                             color: Colors.white,
                           ),
@@ -296,7 +294,38 @@ class _FeedPageScreenState extends State<FeedPageScreen> {
               ),
             ]),
             const SizedBox(
-              height: 10,
+              height: 15,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // ação a ser executada quando o botão for pressionado
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Text('Mensagem enviada com sucesso!'),
+                      content: Text('Obrigado por nos ajudar a melhorar!'),
+                      actions: <Widget>[
+                        ElevatedButton(
+                          child: Text('OK'),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(280, 50),
+                  backgroundColor: const Color(0xF152e51)),
+              child: const Text('Enviar',
+                  style: TextStyle(
+                    fontFamily: 'NovaSlim',
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  )),
             ),
           ],
         ),

@@ -2,6 +2,20 @@
 
 A new Flutter project.
 
+Disciplina: Eletiva Programação para Dispositos Moveis. 
+
+4° SEMESTRE
+
+Integrantes:
+
+Nome: Jefferson Lima Dos Santos
+RA: 
+
+Nome:Lucas Murari De Sousa
+RA: 2840482121012
+
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

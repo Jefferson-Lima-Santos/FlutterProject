@@ -138,7 +138,7 @@ class _SobrePageScreenState extends State<SobrePageScreen> {
               ),
             ),
             const SizedBox(
-              height: 100,
+              height: 80,
             ),
             Text(
               'Este aplicativo foi desenvolvido com o objetivo de abordar conceitos relevantes sobre o universo da cibersegurança, demonstrando a importância de se proteger contra ameaças virtuais.',
@@ -151,7 +151,7 @@ class _SobrePageScreenState extends State<SobrePageScreen> {
               ),
             ),
             const SizedBox(
-              height: 60,
+              height: 80,
             ),
             Text(
               'Aplicativo Desenvolvido por:',
@@ -227,7 +227,7 @@ class _SobrePageScreenState extends State<SobrePageScreen> {
               ),
             ),
             const SizedBox(
-              height: 50,
+              height: 60,
             ),
           ],
         ),
