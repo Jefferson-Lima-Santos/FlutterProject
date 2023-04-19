@@ -222,40 +222,75 @@ class _FeedPageScreenState extends State<FeedPageScreen> {
                         color: Colors.black,
                         width: 2), // Borda preta com largura de 2
                   ),
-                  width: 500, // Largura do container
+                  width: MediaQuery.of(context).size.width -
+                      64, // Largura do container
                   height: 300, // Altura do container
-                  child: Center(
-                    child: TextField(
-                      textAlign: TextAlign.start,
-                      decoration: InputDecoration(
-                        prefixIcon: Icon(
-                          Icons.email,
-                          color: Colors.white,
-                        ),
-                        prefixIconColor: Colors.white,
-                        hintText: 'Digite Seu Email',
-                        fillColor: Colors.white,
-                        focusColor: Colors.white,
-                        hoverColor: Colors.white,
-                        hintStyle: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                        ),
-                        labelText: 'Email',
-                        border: UnderlineInputBorder(
-                          borderSide: BorderSide(
+
+                  child: Column(
+                    children: <Widget>[
+                      TextField(
+                        textAlign: TextAlign.start,
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(
+                            Icons.email,
+                            color: Colors.white,
+                          ),
+                          prefixIconColor: Colors.white,
+                          hintText: 'Digite Seu Email',
+                          fillColor: Colors.white,
+                          focusColor: Colors.white,
+                          hoverColor: Colors.white,
+                          hintStyle: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                          ),
+                          labelText: 'Email',
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.white,
+                            ),
+                          ),
+                          labelStyle: TextStyle(
                             color: Colors.white,
                           ),
                         ),
-                        labelStyle: TextStyle(
-                          color: Colors.white,
+                        style: TextStyle(
+                          color: Colors.white, // Cor do texto
+                          fontSize: 18, // Tamanho da fonte do texto
                         ),
                       ),
-                      style: TextStyle(
-                        color: Colors.white, // Cor do texto
-                        fontSize: 18, // Tamanho da fonte do texto
+                      TextField(
+                        textAlign: TextAlign.start,
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(
+                            Icons.email,
+                            color: Colors.white,
+                          ),
+                          prefixIconColor: Colors.white,
+                          hintText: 'Digite Seu Email',
+                          fillColor: Colors.white,
+                          focusColor: Colors.white,
+                          hoverColor: Colors.white,
+                          hintStyle: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                          ),
+                          labelText: 'Email',
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.white,
+                            ),
+                          ),
+                          labelStyle: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                        style: TextStyle(
+                          color: Colors.white, // Cor do texto
+                          fontSize: 18, // Tamanho da fonte do texto
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ),
