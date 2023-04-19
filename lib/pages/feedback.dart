@@ -305,6 +305,7 @@ class _FeedPageScreenState extends State<FeedPageScreen> {
                     return AlertDialog(
                       title: Text('Mensagem enviada com sucesso!'),
                       content: Text('Obrigado por nos ajudar a melhorar!'),
+                      icon: Icon(Icons.check_circle_outline),
                       actions: <Widget>[
                         ElevatedButton(
                           child: Text('OK'),
