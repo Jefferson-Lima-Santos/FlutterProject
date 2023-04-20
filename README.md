@@ -1,6 +1,6 @@
 # cybersecurity
 
-A new Flutter project.
+Um projeto em Flutter
 
 Disciplina: Eletiva Programação para Dispositos Moveis. 
 
@@ -9,7 +9,7 @@ Disciplina: Eletiva Programação para Dispositos Moveis.
 Integrantes:
 
 Nome: Jefferson Lima Dos Santos
-RA: 
+RA: 2840482121028
 
 Nome:Lucas Murari De Sousa
 RA: 2840482121012
@@ -18,13 +18,10 @@ RA: 2840482121012
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Esse projeto é sobre um aplicativo mobile feito em flutter com foco em cybersegurança.
 
-A few resources to get you started if this is your first Flutter project:
+Docs do flutter:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [Lab: Escreva seu app em flutter](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Samples em flutter](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
