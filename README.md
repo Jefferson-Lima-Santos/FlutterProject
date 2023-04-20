@@ -22,6 +22,6 @@ Esse projeto é sobre um aplicativo mobile feito em flutter com foco em cyberseg
 
 Docs do flutter:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [Lab: Escreva seu app em flutter](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Samples em flutter](https://docs.flutter.dev/cookbook)
 
