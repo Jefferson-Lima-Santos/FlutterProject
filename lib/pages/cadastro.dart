@@ -18,10 +18,7 @@ class _CadastroScreenPageState extends State<CadastroScreenPage> {
       showpart = 1;
     } else if (showPart2 == true && showPart3 == false) {
       showpart = 2;
-    } else if (showPart2 == true && showPart3 == true) {
-      showpart = 3;
     }
-
     return Scaffold(
       backgroundColor: const Color(0xFF0F284C),
       body: Container(
@@ -50,7 +47,8 @@ class _CadastroScreenPageState extends State<CadastroScreenPage> {
               visible: showpart == 1,
               maintainSize: false,
               child: const Text(
-                'Por favor, Digite o seu Nome!',
+                'Por favor, Digite o seu Nome e o Seu e-mail!',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'orbitron',
                   fontSize: 24,
@@ -59,20 +57,8 @@ class _CadastroScreenPageState extends State<CadastroScreenPage> {
                 ),
               ),
               replacement: const Text(
-                'Por favor, Digite o seu Email!',
-                style: TextStyle(
-                  fontFamily: 'orbitron',
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            Visibility(
-              visible: showpart == 3,
-              maintainSize: false,
-              child: const Text(
-                'Por favor, Digite a sua Senha!',
+                'Por favor, Digite a sua Senha e a Confirme!',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'orbitron',
                   fontSize: 24,
@@ -106,28 +92,6 @@ class _CadastroScreenPageState extends State<CadastroScreenPage> {
                 ),
               ),
               replacement: TextField(
-                style: TextStyle(
-                  color: Colors.blue,
-                ),
-                decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.email),
-                  prefixIconColor: Colors.white,
-                  hintText: 'email@email.com.br',
-                  hintStyle: TextStyle(color: Colors.blue),
-                  labelText: 'Email',
-                  labelStyle: TextStyle(color: Colors.white),
-                  border: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Visibility(
-              visible: showpart == 3,
-              maintainSize: false,
-              child: const TextField(
                 obscureText: true,
                 style: TextStyle(
                   color: Colors.blue,
@@ -147,6 +111,47 @@ class _CadastroScreenPageState extends State<CadastroScreenPage> {
                 ),
               ),
             ),
+            Visibility(
+              visible: showpart == 1,
+              maintainSize: false,
+              child: const TextField(
+                style: TextStyle(
+                  color: Colors.blue,
+                ),
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.email),
+                  prefixIconColor: Colors.white,
+                  hintText: 'email@email.com.br',
+                  hintStyle: TextStyle(color: Colors.blue),
+                  labelText: 'Email',
+                  labelStyle: TextStyle(color: Colors.white),
+                  border: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+              replacement: TextField(
+                obscureText: true,
+                style: TextStyle(
+                  color: Colors.blue,
+                ),
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.lock),
+                  prefixIconColor: Colors.white,
+                  hintText: 'Confirme a senha',
+                  hintStyle: TextStyle(color: Colors.blue),
+                  labelText: 'Confirmar Senha',
+                  labelStyle: TextStyle(color: Colors.white),
+                  border: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ),
             ElevatedButton(
               onPressed: () {
                 // ação a ser executada quando o botão for pressionado
@@ -154,11 +159,7 @@ class _CadastroScreenPageState extends State<CadastroScreenPage> {
                   setState(() {
                     showPart2 = true;
                   });
-                } else if (showPart2 == true && showPart3 == false) {
-                  setState(() {
-                    showPart3 = true;
-                  });
-                } else if (showPart2 == true && showPart3 == true) {
+                } else if (showPart2 == true) {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(

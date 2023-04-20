@@ -1,7 +1,4 @@
-import 'package:cybersecurity/pages/menu.dart';
 import 'package:flutter/material.dart';
-import 'package:cybersecurity/pages/feedback.dart';
-import 'package:cybersecurity/pages/introdcciber.dart';
 
 class SobrePageScreen extends StatefulWidget {
   const SobrePageScreen({Key? key}) : super(key: key);
@@ -28,86 +25,6 @@ class _SobrePageScreenState extends State<SobrePageScreen> {
           centerTitle: true,
           title: const Text('BE SAFE')),
       backgroundColor: const Color(0xFF0F284C),
-      drawer: Drawer(
-        backgroundColor: Color(0xFF0F284C),
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              child: Column(
-                children: [
-                  const Text(
-                    'MENU',
-                    style: TextStyle(
-                      fontFamily: 'orbitron',
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-              decoration: const BoxDecoration(
-                color: Color(0xFF0F284C),
-              ),
-            ),
-            ListTile(
-              title: const Text(
-                'Sobre',
-                style: TextStyle(
-                  fontFamily: 'orbitron',
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const SobrePageScreen()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text(
-                'Mande um Feedback',
-                style: TextStyle(
-                  fontFamily: 'orbitron',
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const FeedPageScreen()),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text(
-                'Sair',
-                style: TextStyle(
-                  fontFamily: 'orbitron',
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const MenuScreenPage()),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
       body: Container(
         alignment: Alignment.center,
         padding: const EdgeInsets.all(32),
