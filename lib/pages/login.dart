@@ -1,6 +1,6 @@
 import 'package:cybersecurity/pages/cadastro.dart';
 import 'package:cybersecurity/pages/esqueceuasenha.dart';
-import 'package:cybersecurity/pages/menu.dart';
+import '../controller/login_controller.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreenPage extends StatefulWidget {
@@ -11,7 +11,13 @@ class LoginScreenPage extends StatefulWidget {
 }
 
 class LoginScreenPageState extends State<LoginScreenPage> {
+  var txtEmail = TextEditingController();
+  var txtSenha = TextEditingController();
   bool _isChecked = false;
+
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +45,8 @@ class LoginScreenPageState extends State<LoginScreenPage> {
             const SizedBox(
               height: 50,
             ),
-            const TextField(
+            TextField(
+              controller: txtEmail,
               style: TextStyle(
                 color: Colors.blue,
               ),
@@ -57,7 +64,8 @@ class LoginScreenPageState extends State<LoginScreenPage> {
                 ),
               ),
             ),
-            const TextField(
+            TextField(
+              controller: txtSenha,
               style: TextStyle(
                 color: Colors.blue,
               ),
@@ -100,10 +108,10 @@ class LoginScreenPageState extends State<LoginScreenPage> {
             ElevatedButton(
               onPressed: () {
                 // ação a ser executada quando o botão for pressionado
-                Navigator.push(
+                LoginController().login(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => const MenuScreenPage()),
+                  txtEmail.text,
+                  txtSenha.text,
                 );
               },
               style: ElevatedButton.styleFrom(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../controller/login_controller.dart';
 import 'package:cybersecurity/pages/login.dart';
 
 class EsqueceuasenhaPageScreen extends StatefulWidget {
@@ -10,6 +11,7 @@ class EsqueceuasenhaPageScreen extends StatefulWidget {
 }
 
 class _EsqueceuasenhaPageScreenState extends State<EsqueceuasenhaPageScreen> {
+  var txtEmail = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +48,8 @@ class _EsqueceuasenhaPageScreenState extends State<EsqueceuasenhaPageScreen> {
             const SizedBox(
               height: 50,
             ),
-            const TextField(
+            TextField(
+              controller: txtEmail,
               style: TextStyle(
                 color: Colors.blue,
               ),
@@ -66,11 +69,7 @@ class _EsqueceuasenhaPageScreenState extends State<EsqueceuasenhaPageScreen> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const LoginScreenPage()),
-                );
+                LoginController().esqueceuSenha(context, txtEmail.text);
                 // ação a ser executada quando o botão for pressionado
               },
               style: ElevatedButton.styleFrom(

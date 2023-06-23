@@ -1,5 +1,7 @@
-import 'package:cybersecurity/pages/menu.dart';
+import '../controller/login_controller.dart';
 import 'package:flutter/material.dart';
+
+import '../util/util.dart';
 
 class CadastroScreenPage extends StatefulWidget {
   const CadastroScreenPage({Key? key}) : super(key: key);
@@ -9,6 +11,10 @@ class CadastroScreenPage extends StatefulWidget {
 }
 
 class _CadastroScreenPageState extends State<CadastroScreenPage> {
+  var txtEmail = TextEditingController();
+  var txtSenha = TextEditingController();
+  var txtConfSenha = TextEditingController();
+  var txtNome = TextEditingController();
   bool showPart2 = false;
   bool showPart3 = false;
   int showpart = 0;
@@ -46,7 +52,7 @@ class _CadastroScreenPageState extends State<CadastroScreenPage> {
             Visibility(
               visible: showpart == 1,
               maintainSize: false,
-              child: const Text(
+              child: Text(
                 'Por favor, Digite o seu Nome e o Seu e-mail!',
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -73,7 +79,8 @@ class _CadastroScreenPageState extends State<CadastroScreenPage> {
             Visibility(
               visible: showpart == 1,
               maintainSize: false,
-              child: const TextField(
+              child: TextField(
+                controller: txtNome,
                 style: TextStyle(
                   color: Colors.blue,
                 ),
@@ -92,6 +99,7 @@ class _CadastroScreenPageState extends State<CadastroScreenPage> {
                 ),
               ),
               replacement: TextField(
+                controller: txtSenha,
                 obscureText: true,
                 style: TextStyle(
                   color: Colors.blue,
@@ -114,7 +122,8 @@ class _CadastroScreenPageState extends State<CadastroScreenPage> {
             Visibility(
               visible: showpart == 1,
               maintainSize: false,
-              child: const TextField(
+              child: TextField(
+                controller: txtEmail,
                 style: TextStyle(
                   color: Colors.blue,
                 ),
@@ -133,6 +142,7 @@ class _CadastroScreenPageState extends State<CadastroScreenPage> {
                 ),
               ),
               replacement: TextField(
+                controller: txtConfSenha,
                 obscureText: true,
                 style: TextStyle(
                   color: Colors.blue,
@@ -156,15 +166,25 @@ class _CadastroScreenPageState extends State<CadastroScreenPage> {
               onPressed: () {
                 // ação a ser executada quando o botão for pressionado
                 if (showPart2 == false && showPart3 == false) {
-                  setState(() {
-                    showPart2 = true;
-                  });
+                  if (txtEmail.text != '' && txtNome.text != '') {
+                    setState(() {
+                      showPart2 = true;
+                    });
+                  } else {
+                    erro(context, 'Preencha todos os campos!');
+                  }
                 } else if (showPart2 == true) {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const MenuScreenPage()),
-                  );
+                  if (txtSenha.text != '' &&
+                      txtConfSenha.text == txtSenha.text) {
+                    LoginController().criarConta(
+                      context,
+                      txtNome.text,
+                      txtEmail.text,
+                      txtSenha.text,
+                    );
+                  } else {
+                    erro(context, 'Verifique a senha!');
+                  }
                 }
               },
               style: ElevatedButton.styleFrom(
